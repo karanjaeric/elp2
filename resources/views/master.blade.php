@@ -50,5 +50,7 @@ Released   : 20140225
 <div id="copyright" class="container">
     <p>&copy; Equity Leaders Programme. All rights reserved.</p>
 </div>
+
+<script src="/js/app.js"></script>>
 </body>
 </html>
