@@ -16,5 +16,24 @@ Route::get('/', function () {
 
 });
 Route::resource('scholars', 'ScholarController');
+Route::get('/calendar', function () {
+    return view('admin.calendar');
 
+});
+Route::get('/scholar', function () {
+    return view('admin.scholar');
+
+});
+Route::get('/reports', function () {
+    return view('admin.reports');
+
+});
+Route::get('/outline', function () {
+    return view('admin.outline');
+
+});
+Route::get('/summaries', function () {
+    return view('admin.summaries');
+
+});
 
