@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.dashboard');
 
 });
 Route::resource('scholars', 'ScholarController');
@@ -29,7 +29,7 @@ Route::get('/reports', function () {
 
 });
 Route::get('/outline', function () {
-    return view('admin.outline');
+    return view('admin.dashboard');
 
 });
 Route::get('/summaries', function () {
