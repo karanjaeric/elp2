@@ -57,7 +57,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="/outline" class=" active nav-link">
+            <a href="/outline" class="nav-link  {{Request::is('outline')?'active':''}}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -65,7 +65,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/summaries" class="nav-link">
+            <a href="/summaries" class="nav-link {{Request::is('summaries')?'active':''}}">
               <i class="nav-icon fas fa-align-center"></i>
               <p>
                 Summaries
@@ -73,10 +73,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="/reports" class="nav-link">
+            <a href="/reports" class="nav-link {{Request::is('reports')?'active':''}}">
               <i class="nav-icon fas fa-layer-group"></i>
               <p>
-                Reports
+                Scholars
               </p>
             </a>
           </li>
@@ -84,12 +84,12 @@
             <a href="/scholar" class="nav-link">
               <i class="nav-icon fas fa-user-alt"></i>
               <p>
-                Scholars
+                Scholar Details
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="/calendar" class="nav-link">
+            <a href="/calendar" class="nav-link {{Request::is('calendar')?'active':''}}">
               <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Calendar
