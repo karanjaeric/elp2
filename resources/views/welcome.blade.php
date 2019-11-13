@@ -3,6 +3,6 @@
 @section('contents')
 
     <p>
-        Users will go in here
+    <h1>Dashboards and summaries will go here</h1>
     </p>
 @endsection

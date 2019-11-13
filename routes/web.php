@@ -37,3 +37,11 @@ Route::get('/summaries', function () {
 
 });
 
+Route::get('/register', function () {
+    return view('admin.Register');
+
+});
+Route::get('/login', function () {
+    return view('admin.Login');
+
+});
