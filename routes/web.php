@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('admin.dashboard');
+    return view('admin.Login');
 
 });
 Route::resource('scholars', 'ScholarController');
@@ -31,6 +31,9 @@ Route::get('/reports', function () {
 Route::get('/outline', function () {
     return view('admin.dashboard');
 
+});Route::get('/home', function () {
+    return view('admin.dashboard');
+
 });
 Route::get('/summaries', function () {
     return view('admin.summaries');
@@ -45,3 +48,7 @@ Route::get('/login', function () {
     return view('admin.Login');
 
 });
+
+Auth::routes();
+
+//Route::get('/home', 'HomeController@index')->name('home');

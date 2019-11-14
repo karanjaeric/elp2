@@ -114,8 +114,18 @@
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Edwin Kuria</a></li>
-              <li class="breadcrumb-item active">Log Out</li>
+              <li class="breadcrumb-item"><a href="#">{{Auth::user()->name}}</a></li>
+              <li class="breadcrumb-item active">
+                <a  href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                  {{ __('Logout') }}
+                </a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
+              </li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->

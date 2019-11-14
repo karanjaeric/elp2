@@ -67,7 +67,7 @@
                 <a href="#">I forgot my password</a>
             </p>
             <p class="mb-0">
-                <a href="/register" class="text-center">Create Account</a>
+                <a href="/register" class="text-center">Register a new membership</a>
             </p>
         </div>
         <!-- /.login-card-body -->
