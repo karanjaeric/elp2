@@ -12,7 +12,7 @@
               <div class="info-box-content">
                 <span class="info-box-text">Scholars</span>
                 <span class="info-box-number">
-                  13,543
+                  {{$analysisData['totalScholars']}}
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -26,7 +26,22 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Female</span>
-                <span class="info-box-number">46<small>%</small></span>
+                <span class="info-box-number">  {{$analysisData['totalFemale']}}</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-female"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Male</span>
+                <span class="info-box-number">  {{$analysisData['totalMale']}}</span>
+
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -42,8 +57,33 @@
               <span class="info-box-icon bg-success elevation-1"><i class="fas fa-globe"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Global Universities</span>
+                <span class="info-box-text">Global Scholars</span>
                 <span class="info-box-number">760</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <!-- /.col -->
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-success elevation-1"><i class="fas fa-globe"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">Local Scholars</span>
+                <span class="info-box-number">760</span>
+              </div>
+              <!-- /.info-box-content -->
+            </div>
+            <!-- /.info-box -->
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <div class="info-box mb-3">
+              <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+
+              <div class="info-box-content">
+                <span class="info-box-text">W2F alumni</span>
+                <span class="info-box-number"> <span class="info-box-number">  {{$analysisData['wtf']}}</span></span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -55,8 +95,8 @@
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">W2F alumni</span>
-                <span class="info-box-number">12,564</span>
+                <span class="info-box-text">Top In District</span>
+                <span class="info-box-number"> <span class="info-box-number">  {{$analysisData['topInDistrict']}}</span></span>
               </div>
               <!-- /.info-box-content -->
             </div>

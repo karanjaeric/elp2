@@ -15,6 +15,7 @@ class CreateScholarsTable extends Migration
     {
         Schema::create('scholars', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedBigInteger('university_id');
             $table->timestamps();
             $table->string('pf_number');
             $table->string('name');

@@ -13,4 +13,8 @@ class Scholar extends Model
     ];
 
     protected $table = 'scholars';
+
+    public function university(){
+        return $this->belongsTo(App\University::class,'foreign_key');
+    }
 }

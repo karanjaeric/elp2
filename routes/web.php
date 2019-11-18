@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ScholarController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,13 +30,9 @@ Route::get('/reports', function () {
     return view('admin.reports');
 
 });
-Route::get('/outline', function () {
-    return view('admin.dashboard');
-
-});Route::get('/home', function () {
-    return view('admin.dashboard');
-
-});
+Route::get('/scholars', 'ScholarController@index');
+Route::get('/outline', 'ScholarController@dashboard');
+Route::get('/home', 'ScholarController@dashboard');
 Route::get('/summaries', function () {
     return view('admin.summaries');
 
