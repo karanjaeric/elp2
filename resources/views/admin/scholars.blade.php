@@ -54,8 +54,8 @@
                         <td>{{$scholar->email1}}</td>
                         <td>{{$scholar->email2}}</td>
                         <td>{{$scholar->family_contact}}</td>
-                        <td>{{$scholar->university}}</td>
-                        <td>{{$scholar->course}}</td>
+                        <td>{{$scholar->university->name}}</td>
+                        <td>{{$scholar->course->name}}</td>
                         @endforeach
                     </tr>
 

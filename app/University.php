@@ -11,8 +11,20 @@ class University extends Model
 
     public function scholars(){
 
-        return $this->hasMany(Scholar::class);
+        return $this->hasMany('App\Scholar');
 
     }
+    public function universitycategory(){
+
+      return  $this->belongsTo('App\UniversityCategory','university_category_id');
+
+
+    }    public function country(){
+
+      return  $this->belongsTo('App\Country','country_id');
+
+
+    }
+
 
 }

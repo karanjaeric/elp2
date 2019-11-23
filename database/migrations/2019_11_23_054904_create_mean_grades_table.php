@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUniversitiesTable extends Migration
+class CreateMeanGradesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateUniversitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('universities', function (Blueprint $table) {
+        Schema::create('mean_grades', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('university_category_id');
-            $table->unsignedBigInteger('country_id');
             $table->timestamps();
             $table->string('name')->unique();
-
+            $table->string('description');
         });
     }
 
@@ -30,6 +28,6 @@ class CreateUniversitiesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('universities');
+        Schema::dropIfExists('mean_grades');
     }
 }
