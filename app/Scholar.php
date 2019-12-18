@@ -9,7 +9,7 @@ class Scholar extends Model
     //
 
     protected $fillable = [
-        'pf_number', 'name', 'high_school', 'gender', 'mean_grade', 'elp_class', 'selection_criteria_id', 'county_id', 'branch_id', 'phone_number', 'email1', 'email2', 'family_contact', 'family_contact_relationship', 'course_id'
+        'pf_number', 'name', 'high_school_id', 'gender', 'mean_grade', 'elp_class', 'selection_criteria_id', 'county_id', 'branch_id', 'phone_number', 'email1', 'email2', 'family_contact', 'ontact_relationship_id', 'course_id'
     ];
 
     protected $table = 'scholars';
@@ -21,12 +21,12 @@ class Scholar extends Model
 
     public function course()
     {
-        return $this->hasOne('App\Course', 'course_id');
+        return $this->belongsTo('App\Course', 'course_id');
     }
 
-    public function meanGrdae()
+    public function meanGrade()
     {
-        return $this->hasOne('App\MeanGrade', 'mean_grade_id');
+        return $this->belongsTo('App\MeanGrade', 'mean_grade_id');
     }
 
     public function selectionCriteria()
@@ -55,4 +55,13 @@ class Scholar extends Model
         return $this->belongsTo('App\ElpClass', 'elp_class_id');
     }
 
+    public function contactRelationship()
+    {
+        return $this->belongsTo('App\ContactRelationship', 'contact_relationship_id');
+    }
+
+    public function county()
+    {
+        return $this->belongsTo('App\County', 'county_id');
+    }
 }

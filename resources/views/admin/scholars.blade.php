@@ -43,13 +43,13 @@
                         <td>{{$scholar->id}}</td>
                         <td>{{$scholar->pf_number}}</td>
                         <td>{{$scholar->name}}</td>
-                        <td>{{$scholar->high_school}}</td>
-                        <td>{{$scholar->gender}}</td>
-                        <td>{{$scholar->mean_grade}}</td>
-                        <td>{{$scholar->elp_class}}</td>
-                        <td>{{$scholar->selection_criteria}}</td>
-                        <td>{{$scholar->county_of_residence}}</td>
-                        <td>{{$scholar->branch_posting}}</td>
+                        <td>{{$scholar->highSchool->name}}</td>
+                        <td>{{$scholar->gender->name}}</td>
+                        <td>{{$scholar->meanGrade->name}}</td>
+                        <td>{{$scholar->elpClass->name}}</td>
+                        <td>{{$scholar->selectionCriteria->criteria}}</td>
+                        <td>{{$scholar->county->name}}</td>
+                        <td>{{$scholar->branch->branch_name}}</td>
                         <td>{{$scholar->phone_number}}</td>
                         <td>{{$scholar->email1}}</td>
                         <td>{{$scholar->email2}}</td>

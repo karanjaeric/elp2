@@ -16,12 +16,12 @@ $factory->define(Scholar::class, function (Faker $faker) {
         'mean_grade_id'=>factory(\App\MeanGrade::class),
         'elp_class_id'=>factory(\App\ElpClass::class),
         'selection_criteria_id'=>factory(\App\SelectionCriteria::class),
-        'county_id'=>factory(\App\Country::class),
+        'county_id'=>factory(\App\County::class),
         'branch_id'=>factory(\App\Branch::class),
         'phone_number'=>$faker->phoneNumber,
         'email1'=>$faker->email,
         'email2'=>$faker->email,
         'family_contact'=>$faker->phoneNumber,
-        'family_contact_relationship'=>$faker->word,
+        'contact_relationship_id'=>factory(\App\ContactRelationship::class),
     ];
 });

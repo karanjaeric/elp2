@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Gender;
 use App\Scholar;
+use App\SelectionCriteria;
+use App\UniversityCategory;
 use Illuminate\Http\Request;
-
+use App\University;
 class ScholarController extends Controller
 {
     /**
@@ -109,16 +112,29 @@ class ScholarController extends Controller
     public function dashboard(Request $request)
     {
         $totalScholars=Scholar::all()->count();
-        $totalMale=Scholar::where('gender','male')->count();
-        $totalFemale=Scholar::where('gender','female')->count();
-        $topInDistrict=Scholar::where('selection_criteria','Top In District')->count();
-        $wtf=Scholar::where('selection_criteria','Wing To Fly')->count();
+        $maleGender=Gender::where('name','Male')->first();
+        $femaleGender=Gender::where('name','Female')->first();
+
+        $totalMale=Scholar::where('gender_id',$maleGender->id)->count();
+        $totalFemale=Scholar::where('gender_id',$femaleGender->id)->count();
+        $wtfSelectionCriteria=SelectionCriteria::where('criteria','Wings To Fly')->first();
+        $topInDistrictSelectionCriteria=SelectionCriteria::where('criteria','Top In District')->first();
+        $topInDistrict=Scholar::where('selection_criteria_id',$topInDistrictSelectionCriteria->id)->count();
+        $wtf=Scholar::where('selection_criteria_id',$wtfSelectionCriteria->id)->count();
+
+        $localUniversitiesId=UniversityCategory::where('name','Local')->first();
+        $globalUniversitiesId=UniversityCategory::where('name','Global')->first();
+        $localScholars=Scholar::where('university_id',University::where('university_category_id',$localUniversitiesId)->select('id'))->count();
+        dd($localScholars);
+        $globalScholars=Scholar::where('university_id',University::where('university_category_id',$globalUniversitiesId)->get('id'));
         $analysisData=array(
             'totalScholars'=>$totalScholars,
             'totalMale'=>$totalMale,
             'totalFemale'=>$totalFemale,
             'topInDistrict'=>$topInDistrict,
-            'wtf'=>$wtf
+            'wtf'=>$wtf,
+            'localScholars'=>$localScholars,
+            'globalScholars'=>$globalScholars,
         );
         return view('admin.dashboard',compact('analysisData',$analysisData));
 

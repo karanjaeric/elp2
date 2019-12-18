@@ -58,7 +58,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Global Scholars</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-number"> {{$analysisData['globalScholars']}}</span>
               </div>
               <!-- /.info-box-content -->
             </div>
@@ -71,7 +71,7 @@
 
               <div class="info-box-content">
                 <span class="info-box-text">Local Scholars</span>
-                <span class="info-box-number">760</span>
+                <span class="info-box-number"> {{$analysisData['localScholars']}}</span>
               </div>
               <!-- /.info-box-content -->
             </div>

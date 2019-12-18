@@ -31,7 +31,7 @@ class CreateScholarsTable extends Migration
             $table->string('email1');
             $table->string('email2');
             $table->string('family_contact');
-            $table->string('family_contact_relationship');
+            $table->string('contact_relationship_id');
 
         });
     }
