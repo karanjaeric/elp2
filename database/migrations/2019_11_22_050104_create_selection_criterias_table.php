@@ -16,7 +16,7 @@ class CreateSelectionCriteriasTable extends Migration
         Schema::create('selection_criterias', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('criteria')->unique();
+            $table->string('name')->unique();
         });
     }
 

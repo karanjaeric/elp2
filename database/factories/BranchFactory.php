@@ -7,6 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Branch::class, function (Faker $faker) {
     return [
-        'branch_name'=>$faker->word
+        'name'=>$faker->word
     ];
 });

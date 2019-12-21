@@ -2,7 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Branch;
+use App\ContactRelationship;
+use App\County;
+use App\Course;
+use App\ElpClass;
 use App\Gender;
+use App\HighSchool;
+use App\MeanGrade;
 use App\Scholar;
 use App\SelectionCriteria;
 use App\UniversityCategory;
@@ -28,8 +35,19 @@ class ScholarController extends Controller
      */
     public function create()
     {
-        return view('admin.createscholar');
-
+        $counties=County::all();
+        $genders=Gender::all();
+        $contactRelationships=ContactRelationship::all();
+        $highSchools=HighSchool::all();
+        $meanGrades=MeanGrade::all();
+        $elpClasses=ElpClass::all();
+        $selectionCriteria=SelectionCriteria::all();
+        $universities=University::all();#
+        $branches=Branch::all();
+        $courses=Course::all();
+        return view('admin.createscholar',['counties'=>$counties,'genders'=>$genders,'contactRelationships'=>$contactRelationships,'highSchools'=>$highSchools,
+            'meanGrades'=>$meanGrades,'elpClasses'=>$elpClasses,'selectionCriteria'=>$selectionCriteria,'universities'=>$universities,'branches'=>$branches,
+            'courses'=>$courses]);
     }
 
     /**
@@ -117,24 +135,24 @@ class ScholarController extends Controller
 
         $totalMale=Scholar::where('gender_id',$maleGender->id)->count();
         $totalFemale=Scholar::where('gender_id',$femaleGender->id)->count();
-        $wtfSelectionCriteria=SelectionCriteria::where('criteria','Wings To Fly')->first();
-        $topInDistrictSelectionCriteria=SelectionCriteria::where('criteria','Top In District')->first();
+        $wtfSelectionCriteria=SelectionCriteria::where('name','Wings To Fly')->first();
+        $topInDistrictSelectionCriteria=SelectionCriteria::where('name','Top In District')->first();
         $topInDistrict=Scholar::where('selection_criteria_id',$topInDistrictSelectionCriteria->id)->count();
         $wtf=Scholar::where('selection_criteria_id',$wtfSelectionCriteria->id)->count();
 
         $localUniversitiesId=UniversityCategory::where('name','Local')->first();
         $globalUniversitiesId=UniversityCategory::where('name','Global')->first();
-        $localScholars=Scholar::where('university_id',University::where('university_category_id',$localUniversitiesId)->select('id'))->count();
-        dd($localScholars);
-        $globalScholars=Scholar::where('university_id',University::where('university_category_id',$globalUniversitiesId)->get('id'));
+//        $localScholars=Scholar::where('university_id',University::where('university_category_id',$localUniversitiesId)->select('id'))->count();
+//        dd($localScholars);
+//        $globalScholars=Scholar::where('university_id',University::where('university_category_id',$globalUniversitiesId)->get('id'));
         $analysisData=array(
             'totalScholars'=>$totalScholars,
             'totalMale'=>$totalMale,
             'totalFemale'=>$totalFemale,
             'topInDistrict'=>$topInDistrict,
             'wtf'=>$wtf,
-            'localScholars'=>$localScholars,
-            'globalScholars'=>$globalScholars,
+            'localScholars'=>10,
+            'globalScholars'=>10,
         );
         return view('admin.dashboard',compact('analysisData',$analysisData));
 
