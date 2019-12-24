@@ -5,33 +5,48 @@
         {{@csrf_field()}}
         <div class="modal-body">
             <div class="form-group">
-                <input v-model="form.pf_number" placeholder="Pf Number" id="pf_number" type="text"
+                <input placeholder="Pf Number" id="pf_number" type="text"
                        name="pf_number"
-                       class="form-control" :class="{ 'is-invalid': form.errors.has('pf_number') }">
-                <has-error :form="form" field="pf_number"></has-error>
+                       class="form-control">
+                <has-error field="pf_number"></has-error>
             </div>
 
             <div class="form-group">
-                <input v-model="form.name" placeholder="name" id="name" type="text" name="name"
-                       class="form-control" :class="{ 'is-invalid': form.errors.has('name') }">
-                <has-error :form="form" field="name"></has-error>
+                <input placeholder="First Name" id="first_name" type="text" name="first_name"
+                       class="form-control">
+                <has-error field="first_name"></has-error>
             </div>
             <div class="form-group">
-                <select v-model="form.gender" id="gender" name="gender" class="form-control"
-                        :class="{ 'is-invalid': form.errors.has('gender') }">
+                <input placeholder="Middle Name" id="middle_name" type="text" name="middle_name" class="form-control"
+                >
+                <has-error field="middle_name"></has-error>
+            </div>
+            <div class="form-group">
+                <input placeholder="Surname" id="surname" type="text" name="surname"
+                       class="form-control">
+                <has-error field="surname"></has-error>
+            </div>
+            <div class="form-group">
+                <input placeholder="ID Number" id="id_number" type="text" name="id_number"
+                       class="form-control">
+                <has-error field="id_number"></has-error>
+            </div>
+            <div class="form-group">
+                <select id="gender_id" name="gender_id" class="form-control"
+                >
                     <option value="">Select Gender</option>
                     @foreach($genders as $gender)
                         <option value="{{$gender->id}}">{{$gender->name}}</option>
                     @endforeach
 
                 </select>
-                <has-error :form="form" field="gender"></has-error>
+                <has-error field="gender_id"></has-error>
             </div>
             <div class="form-group">
-                <select v-model="form.county_of_residence" id="county_of_residence"
-                        name="county_of_residence"
+                <select id="county_id"
+                        name="county_id"
                         class="form-control"
-                        :class="{ 'is-invalid': form.errors.has('county_of_residence') }">
+                >
                     <option value="">Select County of Residence</option>
                     @foreach($counties as $county)
                         <option value="{{$county->id}}">{{$county->name}}</option>
@@ -39,123 +54,129 @@
 
 
                 </select>
-                <has-error :form="form" field="county_of_residence"></has-error>
+                <has-error field="county_id"></has-error>
             </div>
             <div class="form-group">
-                <input v-model="form.email1" placeholder="Email1" id="email1" type="email" name="email1"
-                       class="form-control" :class="{ 'is-invalid': form.errors.has('email1') }">
-                <has-error :form="form" field="email1"></has-error>
+                <input placeholder="Email1" id="email1" type="email" name="email1"
+                       class="form-control">
+                <has-error field="email1"></has-error>
             </div>
             <div class="form-group">
-                <input v-model="form.email2" placeholder="Email2" id="email2" type="email" name="email2"
-                       class="form-control" :class="{ 'is-invalid': form.errors.has('email1') }">
-                <has-error :form="form" field="email2"></has-error>
+                <input placeholder="Email2" id="email2" type="email" name="email2"
+                       class="form-control">
+                <has-error field="email2"></has-error>
             </div>
             <div class="form-group">
-                <input v-model="form.phone_number" placeholder="Phone Number" id="phone_number" type="text"
+                <input placeholder="Phone Number" id="phone_number" type="text"
                        name="phone_number"
-                       class="form-control" :class="{ 'is-invalid': form.errors.has('phone_number') }">
-                <has-error :form="form" field="phone_number"></has-error>
+                       class="form-control">
+                <has-error field="phone_number"></has-error>
             </div>
             <div class="form-group">
-                <input v-model="form.family_contact" placeholder="family_contact" id="family_contact"
+                <input placeholder="Phone Number2" id="phone_number2" type="text"
+                       name="phone_number2"
+                       class="form-control">
+                <has-error field="phone_number2"></has-error>
+            </div>
+            <div class="form-group">
+                <input placeholder="family_contact" id="family_contact"
                        type="text" name="family_contact"
                        class="form-control"
-                       :class="{ 'is-invalid': form.errors.has('family_contact') }">
-                <has-error :form="form" field="family_contact"></has-error>
+                >
+                <has-error field="family_contact"></has-error>
             </div>
             <div class="form-group">
-                <select v-model="form.family_contact_relationship" id="family_contact_relationship"
-                        name="family_contact_relationship" class="form-control"
-                        :class="{ 'is-invalid': form.errors.has('family_contact_relationship') }">
+                <select id="family_contact_relationship"
+                        name="contact_relationship_id" class="form-control"
+                >
                     <option value="">Select Contact Relationship</option>
                     @foreach($contactRelationships as $contactRelationship)
                         <option value="{{$contactRelationship->id}}">{{$contactRelationship->name}}</option>
                     @endforeach
 
                 </select>
-                <has-error :form="form" field="family_contact_relationship"></has-error>
+                <has-error field="contact_relationship_id"></has-error>
             </div>
             <div class="form-group">
-                <select v-model="form.high_school" id="high_school" name="high_school"
+                <select id="high_school_id" name="high_school_id"
                         class="form-control"
-                        :class="{ 'is-invalid': form.errors.has('high_school') }">
+                >
                     <option value="">Select High School</option>
                     @foreach($highSchools as $highSchool)
                         <option value="{{$highSchool->id}}">{{$highSchool->name}}</option>
                     @endforeach
 
                 </select>
-                <has-error :form="form" field="high_school"></has-error>
+                <has-error :form="form" field="high_school_id"></has-error>
             </div>
             <div class="form-group">
-                <select v-model="form.mean_grade" id="mean_grade" name="mean_grade" class="form-control"
-                        :class="{ 'is-invalid': form.errors.has('mean_grade') }">
+                <select id="mean_grade_id" name="mean_grade_id" class="form-control"
+                >
                     <option value="">Select Grade</option>
                     @foreach($meanGrades as $grade)
                         <option value="{{$grade->id}}">{{$grade->name}}</option>
                     @endforeach
 
                 </select>
-                <has-error :form="form" field="mean_grade"></has-error>
+                <has-error field="mean_grade_id"></has-error>
             </div>
 
             <div class="form-group">
-                <select v-model="form.elp_class" id="elp_class" name="elp_class" class="form-control"
-                        :class="{ 'is-invalid': form.errors.has('elp_class') }">
+                <select id="elp_class_id" name="elp_class_id" class="form-control"
+                >
                     <option value="">Select ELP Class</option>
                     @foreach($elpClasses as $elpClass)
                         <option value="{{$elpClass->id}}">{{$elpClass->name}}</option>
                     @endforeach
 
                 </select>
-                <has-error :form="form" field="elp_class"></has-error>
+                <has-error field="elp_class_id"></has-error>
             </div>
             <div class="form-group">
-                <select v-model="form.selection_criteria" id="selection_ctiteria"
-                        name="selection_criteria" class="form-control"
-                        :class="{ 'is-invalid': form.errors.has('selection_criteria') }">
+                <select id="selection_criteria_id"
+                        name="selection_criteria_id" class="form-control"
+                >
                     <option value="">Selection Criteria</option>
                     @foreach($selectionCriteria as $criteria)
                         <option value="{{$criteria->id}}">{{$criteria->name}}</option>
                     @endforeach
 
                 </select>
-                <has-error :form="form" field="elp_class"></has-error>
+                <has-error field="selection_ctiteria"></has-error>
             </div>
             <div class="form-group">
-                <select v-model="form.university" id="university"
-                        name="university" class="form-control"
-                        :class="{ 'is-invalid': form.errors.has('university') }">
+                <select id="university_id"
+                        name="university_id" class="form-control"
+                >
                     <option value="">Choose University</option>
                     @foreach($universities as $university)
                         <option value="{{$university->id}}">{{$university->name}}</option>
                     @endforeach
                 </select>
-                <has-error :form="form" field="university"></has-error>
+                <has-error field="university_id"></has-error>
             </div>
             <div class="form-group">
-                <select v-model="form.branch_posting" id="branch_posting"
-                        name="branch_posting" class="form-control"
-                        :class="{ 'is-invalid': form.errors.has('branch_posting') }">
+                <select id="branch_id"
+                        name="branch_id" class="form-control"
+                >
                     <option value="">Choose Branch</option>
                     @foreach($branches as $branch)
                         <option value="{{$branch->id}}">{{$branch->name}}</option>
                     @endforeach
 
                 </select>
-                <has-error :form="form" field="branch_posting"></has-error>
+                <has-error field="branch_id"></has-error>
             </div>
             <div class="form-group">
-                <select v-model="form.course" id="course"
-                        name="course" class="form-control"
-                        :class="{ 'is-invalid': form.errors.has('course') }">
+                <select id="course_id"
+                        name="course_id" class="form-control"
+                >
                     <option value="">Choose Course</option>
                     @foreach($courses as $course)
                         <option value="{{$course->id}}">{{$course->name}}</option>
                     @endforeach
                 </select>
-                <has-error :form="form" field="course"></has-error>
+                <has-error field="course"></has-error>
             </div>
         </div>
         <div class="modal-footer">

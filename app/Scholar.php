@@ -9,7 +9,26 @@ class Scholar extends Model
     //
 
     protected $fillable = [
-        'pf_number', 'name', 'high_school_id', 'gender', 'mean_grade', 'elp_class', 'selection_criteria_id', 'county_id', 'branch_id', 'phone_number', 'email1', 'email2', 'family_contact', 'ontact_relationship_id', 'course_id'
+        'pf_number',
+        'first_name',
+        'middle_name',
+        'surname',
+        'id_number',
+        'high_school_id',
+        'gender_id',
+        'mean_grade_id',
+        'elp_class_id',
+        'selection_criteria_id',
+        'county_id',
+        'branch_id',
+        'phone_number',
+        'phone_number2',
+        'email1',
+        'email2',
+        'family_contact',
+        'contact_relationship_id',
+        'course_id',
+        'university_id'
     ];
 
     protected $table = 'scholars';

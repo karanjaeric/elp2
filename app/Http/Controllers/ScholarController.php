@@ -58,25 +58,30 @@ class ScholarController extends Controller
      */
     public function store(Request $request)
     {
+//        dd($request);
 
 
         Scholar::create([
             'pf_number' => $request['pf_number'],
-            'name' => $request['name'],
-            'high_school' => $request['high_school'],
-            'gender' => $request['gender'],
-            'mean_grade' => $request['mean_grade'],
-            'elp_class' => $request['elp_class'],
-            'selection_criteria' => $request['selection_criteria'],
-            'county_of_residence' => $request['county_of_residence'],
-            'branch_posting' => $request['branch_posting'],
+            'first_name' => $request['first_name'],
+            'middle_name' => $request['middle_name'],
+            'surname' => $request['surname'],
+            'id_number' => $request['id_number'],
+            'high_school_id' => $request['high_school_id'],
+            'gender_id' => $request['gender_id'],
+            'mean_grade_id' => $request['mean_grade_id'],
+            'elp_class_id' => $request['elp_class_id'],
+            'selection_criteria_id' => $request['selection_criteria_id'],
+            'county_id' => $request['county_id'],
+            'branch_id' => $request['branch_id'],
             'phone_number' => $request['phone_number'],
+            'phone_number2' => $request['phone_number2'],
             'email1' => $request['email1'],
             'email2' => $request['email2'],
             'family_contact' => $request['family_contact'],
-            'family_contact_relationship' => $request['family_contact_relationship'],
-            'university' => $request['university'],
-            'course' => $request['course'],
+            'contact_relationship_id' => $request['contact_relationship_id'],
+            'university_id' => $request['university_id'],
+            'course_id' => $request['course_id'],
         ]);
         $scholars = Scholar::all();
         return view('admin.scholars', compact('scholars', $scholars));

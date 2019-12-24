@@ -42,14 +42,14 @@
                     <tr>
                         <td>{{$scholar->id}}</td>
                         <td>{{$scholar->pf_number}}</td>
-                        <td>{{$scholar->name}}</td>
+                        <td>{{$scholar->first_name.' '.$scholar->middle_name.' '.$scholar->surname}}</td>
                         <td>{{$scholar->highSchool->name}}</td>
                         <td>{{$scholar->gender->name}}</td>
                         <td>{{$scholar->meanGrade->name}}</td>
                         <td>{{$scholar->elpClass->name}}</td>
-                        <td>{{$scholar->selectionCriteria->criteria}}</td>
+                        <td>{{$scholar->selectionCriteria->name}}</td>
                         <td>{{$scholar->county->name}}</td>
-                        <td>{{$scholar->branch->branch_name}}</td>
+                        <td>{{$scholar->branch->name}}</td>
                         <td>{{$scholar->phone_number}}</td>
                         <td>{{$scholar->email1}}</td>
                         <td>{{$scholar->email2}}</td>
@@ -58,7 +58,6 @@
                         <td>{{$scholar->course->name}}</td>
                         @endforeach
                     </tr>
-
                     </tbody>
                 </table>
             </div>
