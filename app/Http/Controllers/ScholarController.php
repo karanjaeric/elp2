@@ -163,4 +163,8 @@ class ScholarController extends Controller
 
     }
 
+    public function test(Request $request)
+    {
+        return ($request);
+    }
 }
