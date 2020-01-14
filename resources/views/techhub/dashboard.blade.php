@@ -13,36 +13,41 @@
         <div class="col-md-8 equel-grid">
           <div class="grid">
             <div class="grid-body py-3">
-              <p class="card-title ml-n1">Resources</p>
+              <div class="split-header">
+                      <p class="card-title">Resources</p>
+                      <div class="content-wrapper v-centered">
+                        <span class="btn action-btn btn-refresh btn-xs component-flat">
+                          <a href="/material/create">
+                          <i class="mdi mdi-plus mdi-2x"></i>
+                        </a>
+                        </span>
+                      </div>
+                    </div>
             </div>
             <div class="table-responsive">
               <table class="table table-hover table-sm">
                 <thead>
                   <tr class="solid-header">
-                    <th class="pl-4">Link</th>
-                    <th>Shared by</th>
-                    <th>Status</th>
+                    <th>Name</th>
+                    <th>Url</th>
+                    <th>Description</th>
+                    <th>Shared By</th>
                   </tr>
                 </thead>
                 <tbody>
+                  @foreach($materials as $material)
                   <tr>
-                    <td class="pr-0 pl-4">
-                      https://www.github.com/user/phpblahblahblah
-                    </td>
                     <td>
-                      <small>Cosmas Thuku</small>
-                    </td>
-                    <td>Archive</td>
-                  </tr>
-                  <tr>
-                    <td class="pr-0 pl-4">
-                      https://www.github.com/user/phpblahblahblah
-                    </td>
+                      {{$material -> name }}
                     <td>
-                      <small>Cosmas Thuku</small>
+                      {{$material -> url }}
                     </td>
-                    <td>Active</td>
+                    <td>{{$material -> writeup }}
+                    </td>
+                    <td>{{$material -> name }}
+                    </td>
                   </tr>
+                  @endforeach
                 </tbody>
               </table>
             </div>
@@ -67,22 +72,16 @@
               </div>
               <div class="vertical-timeline-wrapper">
                 <div class="timeline-vertical dashboard-timeline">
+                  @foreach($meetings as $meeting)
                   <div class="activity-log">
-                    <p class="log-name">TechHub Meetup</p>
-                    <div class="log-details"> Java training Session <div class="wrapper mt-2">
-                        <button type="button" class="btn btn-xs btn-primary">Register</button>
+                    <p class="log-name">{{ $meeting->name }}</p>
+                    <div class="log-details"> {{ $meeting->host }} <div class="wrapper mt-2">
+                        <button type="button" class="btn btn-xs btn-primary" disabled>Register</button>
                       </div>
                     </div>
-                    <small class="log-time">24/July/2020</small>
+                    <small class="log-time">{{$meeting-> date }}</small>
                   </div>
-                  <div class="activity-log">
-                    <p class="log-name">Oracle Visit</p>
-                    <div class="log-details"> Blockchain session <div class="wrapper mt-2">
-                        <button type="button" class="btn btn-xs btn-primary">Register</button>
-                      </div>
-                    </div>
-                    <small class="log-time">5/August/2020</small>
-                  </div>
+                  @endforeach
                 </div>
               </div>
             </div>

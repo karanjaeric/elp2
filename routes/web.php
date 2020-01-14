@@ -12,11 +12,13 @@ use App\Http\Controllers\ScholarController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/home', function () {return view('techhub.dashboard');});
+Route::get('/home','DisplayController@dashboard');
+Route::get('/members','DisplayController@members');
 Route::get('/', function () {return view('techhub.home');});
 //Route::post('/user', 'Auth\RegisterController@');
 Auth::routes();
-Route::post('/test','ScholarController@test');
+Route::resource('/meeting','MeetingController');
+Route::resource('/material','MaterialController');
 /*
 Route::get('/', function () {
     return view('admin.Login');

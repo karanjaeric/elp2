@@ -62,13 +62,13 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/members">
               <span class="link-title">Members</span>
               <i class="mdi mdi-account link-icon"></i>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/meeting">
               <span class="link-title">Meetings</span>
               <i class="mdi mdi-account-multiple-plus link-icon"></i>
             </a>
