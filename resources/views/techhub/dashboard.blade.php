@@ -83,8 +83,10 @@
                         </form>
                       </div>
                     </div>
-                    <small class="log-time">{{$meeting-> date }}</small>
+
+                    <small class="log-time">{{ $currentdate->diffForHumans($meeting->date)}}</small>
                   </div>
+
                   @endforeach
                 </div>
               </div>

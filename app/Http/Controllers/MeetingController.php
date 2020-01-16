@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Meeting;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MeetingController extends Controller
 {
@@ -14,7 +16,7 @@ class MeetingController extends Controller
      */
     public function index()
     {
-        $meetings = Meeting::all();
+        $meetings = DB::table('meetings')->orderBy('date','desc')->get();
         return view('techhub.meeting.index',compact('meetings'));
     }
 
@@ -36,8 +38,15 @@ class MeetingController extends Controller
      */
     public function store(Request $request)
     {
-        Meeting::create($request->all());
-        return view('techhub.meeting.index');
+        $meetingdate =  Carbon::createFromDate($request['yyyy'], $request['mm'], $request['dd'], 'Africa/Nairobi');
+        //return($meetingdate);
+        Meeting::create([
+          'name'=> $request['name'],
+          'host'=> $request['host'],
+          'date'=> $meetingdate,
+          'description'=>$request['description'],
+        ]);
+        return redirect('/meeting');
     }
 
     /**
