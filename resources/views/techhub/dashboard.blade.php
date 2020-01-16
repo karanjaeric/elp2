@@ -76,7 +76,11 @@
                   <div class="activity-log">
                     <p class="log-name">{{ $meeting->name }}</p>
                     <div class="log-details"> {{ $meeting->host }} <div class="wrapper mt-2">
-                        <button type="button" class="btn btn-xs btn-primary" disabled>Register</button>
+                        <form action="/usermeeting" method="post">
+                            @csrf
+                            <input type="text" id="meetingid" name="meetingid" value="{{ $meeting->id}}" hidden>
+                            <button type="submit" class="btn btn-xs btn-primary">Register</button>
+                        </form>
                       </div>
                     </div>
                     <small class="log-time">{{$meeting-> date }}</small>

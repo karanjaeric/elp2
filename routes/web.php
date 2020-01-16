@@ -12,6 +12,7 @@ use App\Http\Controllers\ScholarController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('/usermeeting','DisplayController@usermeeting');
 Route::get('/home','DisplayController@dashboard');
 Route::get('/members','DisplayController@members');
 Route::get('/', function () {return view('techhub.home');});
