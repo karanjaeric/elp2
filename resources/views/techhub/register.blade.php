@@ -10,7 +10,6 @@
             <div class="col-md-8 mx-auto">
               <form action="/register" method="POST">
                 @csrf
-                <input type="text" name="usertype" id="usertype" value="2" hidden>
                 <div class="form-group row showcase_row_area">
                   <div class="col-md-3 showcase_text_area">
                     <label for="inputType1">First Name</label>

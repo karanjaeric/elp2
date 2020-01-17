@@ -16,8 +16,9 @@ class MeetingController extends Controller
      */
     public function index()
     {
+        $user = auth()->user();
         $meetings = DB::table('meetings')->orderBy('date','desc')->get();
-        return view('techhub.meeting.index',compact('meetings'));
+        return view('techhub.meeting.index',compact('meetings','user'));
     }
 
     /**
@@ -27,7 +28,8 @@ class MeetingController extends Controller
      */
     public function create()
     {
-      return view('techhub.meeting.create');
+      $user = auth()->user();
+      return view('techhub.meeting.create',compact('user'));
     }
 
     /**
@@ -68,7 +70,11 @@ class MeetingController extends Controller
      */
     public function edit(Meeting $meeting)
     {
-        //
+        $id = $meeting->id;
+        $meeting = meeting::with('attendees')->where('id',$id)->get()->first();
+        $user = auth()->user();
+        //return($meeting);
+        return view('techhub.meeting.edit',compact('user','meeting'));
     }
 
     /**

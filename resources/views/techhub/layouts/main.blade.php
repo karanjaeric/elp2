@@ -49,8 +49,8 @@
             <img class="profile-img img-lg rounded-circle" src="../assets/images/profile/user.png" alt="profile image">
           </div>
           <div class="info-wrapper">
-            <h6 class="display-income">Edwin Kuria</h6>
-            <p class="user-name">information technology</p>
+            <h6 class="display-income">{{ $user->firstname}} {{ $user->lastname}}</h6>
+            <p class="user-name">{{ $user->course}}</p>
           </div>
         </div>
         <ul class="navigation-menu">
@@ -67,12 +67,14 @@
               <i class="mdi mdi-account link-icon"></i>
             </a>
           </li>
-          <li>
+            @if($user->usertype <= 2)
+            <li>
             <a href="/meeting">
               <span class="link-title">Meetings</span>
               <i class="mdi mdi-account-multiple-plus link-icon"></i>
             </a>
           </li>
+            @endif
           <li>
             <a href="#">
               <span class="link-title">Reports</span>

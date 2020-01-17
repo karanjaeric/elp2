@@ -6,7 +6,7 @@
     <div class="content-viewport">
       <div class="row">
         <div class="col-12 py-1">
-          <p class="text-gray">Welcome aboard, Allen Clerk</p>
+          <p class="text-gray">Welcome aboard, {{ $user->firstname}} {{$user->lastname}}</p>
         </div>
       </div>
       <div class="row">

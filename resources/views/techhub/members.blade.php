@@ -8,6 +8,7 @@
         <th>Email</th>
         <th>Github</th>
         <th>Course</th>
+        <th>Status</th>
       </tr>
     </thead>
     <tbody>
@@ -21,6 +22,17 @@
         </td>
         <td>{{ $member->github }}</td>
         <td>{{ $member-> course }}</td>
+        <td>
+          @if($member->usertype == 1)
+          Admin
+          @elseif($member->usertype == 2)
+          member
+          @elseif($member->usertype ==3)
+          Guest
+          @else
+          Unknown
+          @endif
+        </td>
       </tr>
       @endforeach
     </tbody>

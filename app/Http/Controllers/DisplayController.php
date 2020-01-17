@@ -23,6 +23,7 @@ class DisplayController extends Controller
       $date = $event->diffInDays($current);
       $time = Carbon::now()->addDays($date)->diffForHumans();
       */
+      $user = auth()->user();
       $days = 0;
       $controldate = Carbon::now();
       $currentdate = Carbon::now();
@@ -30,12 +31,13 @@ class DisplayController extends Controller
       $meetings = $allmeetings->where('date', '>=', $currentdate);
       $meetings = $meetings->orderBy('date','asc')->get();
       $materials = Material::all();
-      return view('techhub.dashboard',compact('materials','meetings','currentdate','controldate','days'));
+      return view('techhub.dashboard',compact('user','materials','meetings','currentdate','controldate','days'));
       //return ($meetings);
     }
     public function members(){
+      $user = auth()->user();
       $members = User::all();
-      return view('techhub.members',compact('members'));
+      return view('techhub.members',compact('members','user'));
     }
     public function usermeeting(Request $request){
       $id = auth()->user()->id;
