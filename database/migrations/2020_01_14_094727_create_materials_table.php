@@ -18,7 +18,7 @@ class CreateMaterialsTable extends Migration
             $table->string('name');
             $table->string('url');
             $table->string('writeup');
-            $table->integer('userId');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }

@@ -18,44 +18,11 @@ Route::get('/members','DisplayController@members');
 Route::get('/', function () {return view('techhub.home');});
 //Route::post('/user', 'Auth\RegisterController@');
 Auth::routes();
-Route::resource('/meeting','MeetingController');
+//Route::resource('/meeting','MeetingController');
 Route::resource('/material','MaterialController');
-/*
-Route::get('/', function () {
-    return view('admin.Login');
-
+Route::get('/meeting','MeetingController@index');
+Route::group(['middleware'=>'admin'],function(){
+    Route::get('/meeting/create','MeetingController@create');
+    Route::post('/meeting','MeetingController@store');
+    Route::get('/meeting/{meeting}/edit','MeetingController@edit');
 });
-Route::resource('scholars', 'ScholarController');
-Route::get('/calendar', function () {
-    return view('admin.calendar');
-
-});
-Route::get('/scholar', function () {
-    return view('admin.scholar');
-
-});
-Route::get('/reports', function () {
-    return view('admin.reports');
-
-});
-Route::get('/scholars', 'ScholarController@index');
-Route::get('/outline', 'ScholarController@dashboard');
-Route::get('/home', 'ScholarController@dashboard');
-Route::get('/summaries', function () {
-    return view('admin.summaries');
-
-});
-
-Route::get('/register', function () {
-    return view('admin.Register');
-
-});
-Route::get('/login', function () {
-    return view('admin.Login');
-
-});
-
-Auth::routes();
-
-//Route::get('/home', 'HomeController@index')->name('home');
-*/

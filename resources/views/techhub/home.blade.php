@@ -13,7 +13,7 @@
 
 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
   <div class="card-body">
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    We are a community of Techies who are part of the Equity Leaders Program. Our focus is mostly software development however we have sessions on Data Science, Machine Learning, Artificial Intelligence, Blockchain and Cyber security once so often.The community usually organizes meet ups where hands on development skills are nurtured.
   </div>
 </div>
 </div>
@@ -27,7 +27,7 @@
 </div>
 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
   <div class="card-body">
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+To avail research, teaching and learning resources to individuals building technology solutions for Africa.
   </div>
 </div>
 </div>
@@ -41,7 +41,8 @@
 </div>
 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
   <div class="card-body">
-    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+    To upskill technology enthusiasts interested in building technology solutions for Africa by providing research,teaching and learning resources and having a tech support community.
+
   </div>
 </div>
 </div>
@@ -84,7 +85,7 @@
   <div class="col-md-2 showcase_text_area">
   </div>
   <div class="col-md-10 showcase_content_area">
-    <a href="mailto:techhub@gmail.com"><button class="btn btn-primary">Send</button></a>
+    <button class="btn btn-primary">Send</button>
   </div>
 </div>
   </div>

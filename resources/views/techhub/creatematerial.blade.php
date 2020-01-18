@@ -10,7 +10,7 @@
       <label for="inputType1">Name</label>
     </div>
     <div class="col-md-9 showcase_content_area">
-      <input type="text" class="form-control" id="name" name="name" placeholder="Name of resource">
+      <input type="text" class="form-control" id="name" name="name" placeholder="Name of resource" required>
     </div>
   </div>
   <div class="form-group row showcase_row_area">
@@ -18,24 +18,16 @@
       <label for="inputType1">Url</label>
     </div>
     <div class="col-md-9 showcase_content_area">
-      <input type="text" class="form-control" id="url" name="url" placeholder="Link to the resource">
+      <input type="text" class="form-control" id="url" name="url" placeholder="Link to the resource" required>
     </div>
   </div>
-  <div class="form-group row showcase_row_area">
-    <div class="col-md-3 showcase_text_area">
-      <label for="inputType1">UserId</label>
-    </div>
-    <div class="col-md-9 showcase_content_area">
-      <input type="text" class="form-control" id="userId" name="userId" placeholder="Your user Id">
-    </div>
-  </div>
+      <input type="text" class="form-control" id="user_id" name="user_id" value="{{$user->id}}" hidden>
   <div class="form-group row showcase_row_area">
     <div class="col-md-3 showcase_text_area">
       <label for="inputType1">Description</label>
     </div>
     <div class="col-md-9 showcase_content_area">
-      <textarea type="text" class="form-control" id="writeup" name="writeup">
-      </textarea>
+      <textarea type="text" class="form-control" id="writeup" name="writeup" required></textarea>
     </div>
   </div>
     <div class="form-group row showcase_row_area">

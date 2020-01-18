@@ -6,7 +6,7 @@
     <div class="content-viewport">
       <div class="row">
         <div class="col-12 py-1">
-          <p class="text-gray">Welcome aboard, {{ $user->firstname}} {{$user->lastname}}</p>
+          <p class="text-gray">Welcome , {{ $user->firstname}} {{$user->lastname}}</p>
         </div>
       </div>
       <div class="row">
@@ -30,8 +30,6 @@
                   <tr class="solid-header">
                     <th>Name</th>
                     <th>Url</th>
-                    <th>Description</th>
-                    <th>Shared By</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -41,10 +39,6 @@
                       {{$material -> name }}
                     <td>
                       {{$material -> url }}
-                    </td>
-                    <td>{{$material -> writeup }}
-                    </td>
-                    <td>{{$material -> name }}
                     </td>
                   </tr>
                   @endforeach

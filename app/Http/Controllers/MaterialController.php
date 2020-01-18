@@ -24,7 +24,8 @@ class MaterialController extends Controller
      */
     public function create()
     {
-      return view('techhub.creatematerial');
+      $user = auth()->user();
+      return view('techhub.creatematerial',compact('user'));
     }
 
     /**
