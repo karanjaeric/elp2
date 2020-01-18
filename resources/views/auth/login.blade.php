@@ -9,10 +9,10 @@
               <form action="/login" method="POST">
                 @csrf
                 <div class="form-group input-rounded">
-                  <input type="text" class="form-control" placeholder="Email" name="email" id="email" />
+                  <input type="text" class="form-control" placeholder="Email" name="email" id="email" required/>
                 </div>
                 <div class="form-group input-rounded">
-                  <input type="password" class="form-control" placeholder="Password" name="password" id="password" />
+                  <input type="password" class="form-control" placeholder="Password" name="password" id="password" required/>
                 </div>
                 <div class="form-inline">
                   <div class="checkbox">
