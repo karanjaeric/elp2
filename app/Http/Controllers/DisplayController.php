@@ -27,8 +27,9 @@ class DisplayController extends Controller
       $days = 0;
       $controldate = Carbon::now();
       $currentdate = Carbon::now();
+      $finaldate = $currentdate->addDays(1);
       $allmeetings = DB::table('meetings');
-      $meetings = $allmeetings->where('date', '>=', $currentdate);
+      $meetings = $allmeetings->where('date', '>=', $finaldate);
       $meetings = $meetings->orderBy('date','asc')->get();
       $materials = Material::all();
       return view('techhub.dashboard',compact('user','materials','meetings','currentdate','controldate','days'));
