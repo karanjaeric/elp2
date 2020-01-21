@@ -15,7 +15,7 @@ class Meeting extends Model
             'meeting_id',
             'id',
             'id',
-            'user_id',
+            'user_id'
         );
     }
 }
