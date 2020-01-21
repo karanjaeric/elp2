@@ -13,10 +13,10 @@
   <table class="table table-hover table-sm">
     <thead>
       <tr class="solid-header">
-        <th class="pl-4">name</th>
-        <th>host</th>
-        <th>date</th>
-        <th>description</th>
+        <th class="pl-4">Name</th>
+        <th>Host</th>
+        <th>Date</th>
+        <th>Venue</th>
       </tr>
     </thead>
     <tbody>
@@ -31,7 +31,7 @@
           <small>{{ $meeting-> host }}</small>
         </td>
         <td>{{ $meeting-> date }}</td>
-        <td>{{ $meeting-> description }}</td>
+        <td>{{ $meeting-> venue }}</td>
       </tr>
       @endforeach
     </tbody>

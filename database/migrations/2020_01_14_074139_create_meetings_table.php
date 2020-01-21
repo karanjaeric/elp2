@@ -19,7 +19,7 @@ class CreateMeetingsTable extends Migration
             $table->string('host');
             $table->string('venue');
             $table->date('date');
-            $table->string('description');
+            $table->text('description');
             $table->timestamps();
         });
     }
