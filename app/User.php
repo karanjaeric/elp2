@@ -44,7 +44,7 @@ class User extends Authenticatable
             'user_id',
             'id',
             'id',
-            'meeting_id',
+            'meeting_id'
         );
     }
 }
