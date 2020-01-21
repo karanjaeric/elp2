@@ -17,6 +17,7 @@ class CreateMeetingsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('host');
+            $table->string('venue');
             $table->date('date');
             $table->string('description');
             $table->timestamps();

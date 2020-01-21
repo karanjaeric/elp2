@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Meeting extends Model
 {
-    protected $fillable =['name','date','description','host'];
+    protected $fillable =['name','date','venue','description','host',];
 
     public function attendees(){
         return $this ->hasManyThrough(

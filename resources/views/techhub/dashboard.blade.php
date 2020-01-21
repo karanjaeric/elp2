@@ -5,8 +5,18 @@
   <div class="page-content-wrapper-inner">
     <div class="content-viewport">
       <div class="row">
-        <div class="col-12 py-1">
+        <div class="col-md-8">
           <p class="text-gray">Welcome , {{ $user->firstname}} {{$user->lastname}}</p>
+        </div>
+        <div class="col-md-4">
+          @if (session('notification'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+                {{ session('notification') }}
+            </div>
+          @endif
         </div>
       </div>
       <div class="row">
@@ -69,7 +79,10 @@
                   @foreach($meetings as $meeting)
                   <div class="activity-log">
                     <p class="log-name">{{ $meeting->name }}</p>
-                    <div class="log-details"> {{ $meeting->host }} <div class="wrapper mt-2">
+                    <div class="log-details">
+                      <p>{{ $meeting->host }}</p>
+                          {{$meeting->venue}}
+                      <div class="wrapper mt-2">
                         <form action="/usermeeting" method="post">
                             @csrf
                             <input type="text" id="meetingid" name="meetingid" value="{{ $meeting->id}}" hidden>
@@ -102,7 +115,7 @@
       </div>
       <div class="col-sm-6 text-center text-sm-left mt-3 mt-sm-0">
         <small class="text-muted d-block">Copyright © 2020 <a href="#" target="_blank">TechHUb</a>. All rights reserved</small>
-        <small class="text-gray mt-2">Handcrafted With <i class="mdi mdi-heart text-danger"></i></small>
+        <small class="text-gray mt-2">Made With <i class="mdi mdi-heart text-danger"></i></small>
       </div>
     </div>
   </footer>

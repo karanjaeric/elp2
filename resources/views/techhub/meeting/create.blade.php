@@ -23,6 +23,14 @@
   </div>
   <div class="form-group row showcase_row_area">
     <div class="col-md-3 showcase_text_area">
+      <label for="inputType1">Venue</label>
+    </div>
+    <div class="col-md-9 showcase_content_area">
+      <input type="text" class="form-control" id="venue" name="venue" placeholder="Nairobi, Equity Center">
+    </div>
+  </div>
+  <div class="form-group row showcase_row_area">
+    <div class="col-md-3 showcase_text_area">
       <label for="inputType1">Date</label>
     </div>
     <div class="col-md-9 showcase_content_area">

@@ -45,6 +45,7 @@ class MeetingController extends Controller
         Meeting::create([
           'name'=> $request['name'],
           'host'=> $request['host'],
+          'venue'=>$request['venue'],
           'date'=> $meetingdate,
           'description'=>$request['description'],
         ]);
