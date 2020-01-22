@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 
 
+
 class DisplayController extends Controller
 {
   public function dashboard(){

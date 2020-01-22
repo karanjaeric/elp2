@@ -55,9 +55,10 @@
           <div class="form-group row showcase_row_area">
             <div class="col-md-3 showcase_text_area">
             </div>
-            <div class="col-md-9 showcase_content_area">
+            <div class="col-md-7 showcase_content_area">
               <button class="btn btn-primary" type="submit">Update Meeting</button>
             </div>
+          </form>
           </div>
           @if ($errors->any())
           <div class="alert alert-danger">
@@ -68,6 +69,7 @@
             </ul>
           </div>
           @endif
+        </form>
           <div class="form-group row showcase_row_area">
             <table class="table table-hover table-sm">
               <thead>
@@ -95,8 +97,10 @@
                 @endforeach
               </tbody>
             </table>
-          </div>
+            <div class="col-md-10 showcase_content_area">
+            </div>
+            <div class="col-md-2 showcase_content_area">
+              <a href="/attendees/export/{{$meeting->id}}"><button class="btn btn-success">Download List</button></a>
+            </div>
         </div>
-      </form>
-    </div>
 @endsection

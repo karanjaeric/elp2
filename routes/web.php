@@ -12,6 +12,7 @@ use App\Http\Controllers\ScholarController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::post('/usermeeting','DisplayController@usermeeting');
 Route::get('/home','DisplayController@dashboard');
 Route::get('/members','DisplayController@members');
@@ -25,4 +26,5 @@ Route::group(['middleware'=>'admin'],function(){
     Route::get('/meeting/create','MeetingController@create');
     Route::post('/meeting','MeetingController@store');
     Route::get('/meeting/{meeting}/edit','MeetingController@edit');
+    Route::get('/attendees/export/{meeting}', 'MeetingController@export');
 });

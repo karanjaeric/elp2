@@ -6,6 +6,8 @@ use Carbon\Carbon;
 use App\Meeting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Exports\AttendeesExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MeetingController extends Controller
 {
@@ -99,5 +101,17 @@ class MeetingController extends Controller
     public function destroy(Meeting $meeting)
     {
         //
+    }
+    /**
+    *Fetches the AttendeesExport class and creates an instance of the class.
+    *
+    *@param \App\Meeting $meetings
+    *Automatically Downloads the excel file named Attendees
+    */
+    public function export(Meeting $meeting){
+      $id = $meeting -> id;
+
+      //dd($id);
+      return (new AttendeesExport($id))->download('techhubconfirmedattendees.xlsx');
     }
 }
