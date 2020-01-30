@@ -15,6 +15,7 @@ class User extends Authenticatable
      *  Usetype:0 ->superuser, 1->Admin, 2-> Member, 3->Guest
      * @var array
      */
+     /*Defines a new User's profile: Their characteristics*/
     protected $fillable = [
         'usertype','firstname','lastname','gender','email', 'phonenumber','phonenumber2','university','course','github','password',
     ];
@@ -36,7 +37,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+    /*Defines the relationship with another entity: A user has many meetings they can sign up for and attend*/
     public function meetings(){
         return $this ->hasManyThrough(
             Meeting::class,

@@ -59,48 +59,48 @@
               <button class="btn btn-primary" type="submit">Update Meeting</button>
             </div>
           </form>
-          </div>
-          @if ($errors->any())
-          <div class="alert alert-danger">
-            <ul>
-              @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-              @endforeach
-            </ul>
-          </div>
-          @endif
-        </form>
-          <div class="form-group row showcase_row_area">
-            <table class="table table-hover table-sm">
-              <thead>
-                <tr class="solid-header">
-                  <th class="pl-4">Name</th>
-                  <th>Email</th>
-                  <th>University</th>
-                  <th>Course</th>
-                  <th>Check-In</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach($meeting->attendees as $attendee)
-                <tr>
-                  <td class="pr-0 pl-4">
-                    {{$attendee->firstname}} {{$attendee->lastname}}
-                  </td>
-                  <td>
-                    <small>{{ $attendee-> email }}</small>
-                  </td>
-                  <td>{{ $attendee-> university }}</td>
-                  <td>{{ $attendee-> course }}</td>
-                  <td>Check-In</td>
-                </tr>
-                @endforeach
-              </tbody>
-            </table>
-            <div class="col-md-10 showcase_content_area">
-            </div>
-            <div class="col-md-2 showcase_content_area">
-              <a href="/attendees/export/{{$meeting->id}}"><button class="btn btn-success">Download List</button></a>
-            </div>
         </div>
-@endsection
+        @if ($errors->any())
+        <div class="alert alert-danger">
+          <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+        @endif
+      </form>
+      <div class="form-group row showcase_row_area">
+        <table class="table table-hover table-sm">
+          <thead>
+            <tr class="solid-header">
+              <th class="pl-4">Name</th>
+              <th>Email</th>
+              <th>University</th>
+              <th>Course</th>
+              <th>Check-In</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($meeting->attendees as $attendee)
+            <tr>
+              <td class="pr-0 pl-4">
+                {{$attendee->firstname}} {{$attendee->lastname}}
+              </td>
+              <td>
+                <small>{{ $attendee-> email }}</small>
+              </td>
+              <td>{{ $attendee-> university }}</td>
+              <td>{{ $attendee-> course }}</td>
+              <td>Check-In</td>
+            </tr>
+            @endforeach
+          </tbody>
+        </table>
+        <div class="col-md-10 showcase_content_area">
+        </div>
+        <div class="col-md-2 showcase_content_area">
+          <a href="/attendees/export/{{$meeting->id}}"><button class="btn btn-success">Download List</button></a>
+        </div>
+      </div>
+      @endsection

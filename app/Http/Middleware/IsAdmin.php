@@ -13,6 +13,7 @@ class IsAdmin
      * @param  \Closure  $next
      * @return mixed
      */
+     /*Checks if the logged in user is an admin*/
     public function handle($request, Closure $next)
     {
         if ( auth()->user()->usertype > 1){

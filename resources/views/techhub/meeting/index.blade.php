@@ -24,8 +24,8 @@
       <tr>
         <td class="pr-0 pl-4">
           <a href="/meeting/{{$meeting->id}}/edit">
-          {{ $meeting-> name }}
-        </a>
+            {{ $meeting-> name }}
+          </a>
         </td>
         <td>
           <small>{{ $meeting-> host }}</small>

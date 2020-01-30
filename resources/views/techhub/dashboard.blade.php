@@ -10,12 +10,12 @@
         </div>
         <div class="col-md-4">
           @if (session('notification'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-                {{ session('notification') }}
-            </div>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            {{ session('notification') }}
+          </div>
           @endif
         </div>
       </div>
@@ -24,15 +24,15 @@
           <div class="grid">
             <div class="grid-body py-3">
               <div class="split-header">
-                      <p class="card-title">Resources</p>
-                      <div class="content-wrapper v-centered">
-                        <span class="btn action-btn btn-refresh btn-xs component-flat">
-                          <a href="/material/create">
-                          <i class="mdi mdi-plus mdi-2x"></i>
-                        </a>
-                        </span>
-                      </div>
-                    </div>
+                <p class="card-title">Resources</p>
+                <div class="content-wrapper v-centered">
+                  <span class="btn action-btn btn-refresh btn-xs component-flat">
+                    <a href="/material/create">
+                      <i class="mdi mdi-plus mdi-2x"></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
             </div>
             <div class="table-responsive">
               <table class="table table-hover table-sm">
@@ -47,55 +47,54 @@
                   <tr>
                     <td>
                       {{$material -> name }}
-                    <td>
-                      {{$material -> url }}
-                    </td>
-                  </tr>
-                  @endforeach
-                </tbody>
-              </table>
+                      <td>
+                        {{$material -> url }}
+                      </td>
+                    </tr>
+                    @endforeach
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-4 equel-grid">
-          <div class="grid">
-            <div class="grid-body">
-              <div class="split-header">
-                <p class="card-title">Meetings Log</p>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-trasnparent action-btn btn-xs component-flat pr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="mdi mdi-dots-vertical"></i>
-                  </button>
-                  <!--
-                  <div class="dropdown-menu dropdown-menu-right">
+          <div class="col-md-4 equel-grid">
+            <div class="grid">
+              <div class="grid-body">
+                <div class="split-header">
+                  <p class="card-title">Meetings Log</p>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-trasnparent action-btn btn-xs component-flat pr-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <i class="mdi mdi-dots-vertical"></i>
+                    </button>
+                    <!--
+                    <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="#">Expand View</a>
                     <a class="dropdown-item" href="#">Edit</a>
                   </div>
                 -->
-                </div>
               </div>
-              <div class="vertical-timeline-wrapper">
-                <div class="timeline-vertical dashboard-timeline">
-                  @foreach($meetings as $meeting)
-                  <div class="activity-log">
-                    <p class="log-name">{{ $meeting->name }}</p>
-                    <div class="log-details">
-                      <p>{{ $meeting->host }}</p>
-                          {{$meeting->venue}}
-                      <div class="wrapper mt-2">
-                        <form action="/usermeeting" method="post">
-                            @csrf
-                            <input type="text" id="meetingid" name="meetingid" value="{{ $meeting->id}}" hidden>
-                            <button type="submit" class="btn btn-xs btn-primary">Register</button>
-                        </form>
-                      </div>
+            </div>
+            <div class="vertical-timeline-wrapper">
+              <div class="timeline-vertical dashboard-timeline">
+                @foreach($meetings as $meeting)
+                <div class="activity-log">
+                  <p class="log-name">{{ $meeting->name }}</p>
+                  <div class="log-details">
+                    <p>{{ $meeting->host }}</p>
+                    {{$meeting->venue}}
+                    <div class="wrapper mt-2">
+                      <form action="/usermeeting" method="post">
+                        @csrf
+                        <input type="text" id="meetingid" name="meetingid" value="{{ $meeting->id}}" hidden>
+                        <button type="submit" class="btn btn-xs btn-primary">Register</button>
+                      </form>
                     </div>
-
-                    <small class="log-time">{{ $currentdate->diffForHumans($meeting->date)}}</small>
                   </div>
 
-                  @endforeach
+                  <small class="log-time">{{ $currentdate->diffForHumans($meeting->date)}}</small>
                 </div>
+
+                @endforeach
               </div>
             </div>
           </div>
@@ -103,22 +102,23 @@
       </div>
     </div>
   </div>
-  <!-- content viewport ends -->
-  <!-- partial:partials/_footer.html -->
-  <footer class="footer">
-    <div class="row">
-      <div class="col-sm-6 text-center text-sm-right order-sm-1">
-        <ul class="text-gray">
-          <li><a href="#">Terms of use</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-        </ul>
-      </div>
-      <div class="col-sm-6 text-center text-sm-left mt-3 mt-sm-0">
-        <small class="text-muted d-block">Copyright © 2020 <a href="#" target="_blank">TechHUb</a>. All rights reserved</small>
-        <small class="text-gray mt-2">Made With <i class="mdi mdi-heart text-danger"></i></small>
-      </div>
+</div>
+<!-- content viewport ends -->
+<!-- partial:partials/_footer.html -->
+<footer class="footer">
+  <div class="row">
+    <div class="col-sm-6 text-center text-sm-right order-sm-1">
+      <ul class="text-gray">
+        <li><a href="#">Terms of use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
     </div>
-  </footer>
-  <!-- partial -->
+    <div class="col-sm-6 text-center text-sm-left mt-3 mt-sm-0">
+      <small class="text-muted d-block">Copyright © 2020 <a href="#" target="_blank">TechHUb</a>. All rights reserved</small>
+      <small class="text-gray mt-2">Made With <i class="mdi mdi-heart text-danger"></i></small>
+    </div>
+  </div>
+</footer>
+<!-- partial -->
 </div>
 @endsection

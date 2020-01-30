@@ -16,6 +16,7 @@ use App\Http\Controllers\Controller;
 
 class DisplayController extends Controller
 {
+  /*Loads up the user dashboard together with the required resources*/
   public function dashboard(){
     /*$current = Carbon::now();
     //$current = $current->toDateString();
@@ -28,7 +29,7 @@ class DisplayController extends Controller
     $days = 0;
     $controldate = Carbon::now();
     $currentdate = Carbon::now();
-    $finaldate = $currentdate->addDays(1);
+    $finaldate = $currentdate->addDays(2);
     $allmeetings = DB::table('meetings');
     $meetings = $allmeetings->where('date', '>=', $finaldate);
     $meetings = $meetings->orderBy('date','asc')->get();
@@ -36,11 +37,13 @@ class DisplayController extends Controller
     return view('techhub.dashboard',compact('user','materials','meetings','currentdate','controldate','days'));
     //return ($meetings);
   }
+  /*Returns all the users of a particular resource*/
   public function members(){
     $user = auth()->user();
     $members = User::all();
     return view('techhub.members',compact('members','user'));
   }
+  /*Adds the user to the meeting list*/
   public function usermeeting(Request $request){
     $id = auth()->user()->id;
     meeting_user::create([
