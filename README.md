@@ -1,78 +1,103 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Equity-leaders-program-techhub-portal
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+### Table of contents.</br>
+* Introduction
+* Technologies
+* Prerequisites
+* Installation
+* Contribution
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Introduction </br>
+The ELP techhub web portal is a project meant for management of Equity leaders program scholars in tech and tech related fields. This is my contribution in the development of the portal.</br>
+It makes it easier for members to sign up for meetups, join project teams, get internal job advertisements and news all in real  time.</br>The management of the team is also able to generate daily reports in form of pdf and online versions. All these features come in a creatively designed dashboard which is accessible after login.</br>
 
-## Learning Laravel
+The project is currently undergoing testing and is hosted on heroku. check it out in this link.
+(http://mysterious-eyrie-20096.herokuapp.com/). For testing you can create your own account or use the following details</br>
+for admin account  use these details.</br>
+**email**: admintesting@gmail.com</br>
+**password**: testing@123Testing</br>
+for a normal user use the following details.</br>
+**email**: projecttesting@gmail.com </br>
+**password**: testing@123Testing</br>
+                           
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The following are sample screenshots of the project running. These dashboards are only accessible after a user visits the portal homepage and logs into the dashboard.</br>
+**Admin Dashboard**
+![Alt Text](https://davikani.s3.eu-west-3.amazonaws.com/githubProjectsImages/ELPtechhub/adminpanel2.png)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Admins are able to generate attendees reports in form of pdfs of any meetup organized among many other reports.   Reports are automatic and real time.**
+![Alt Text](https://davikani.s3.eu-west-3.amazonaws.com/githubProjectsImages/ELPtechhub/meetups.png)
+**Users are able to get live updates on meetups and projects and receive notifications on the same.**
+![Alt Text](https://davikani.s3.eu-west-3.amazonaws.com/githubProjectsImages/ELPtechhub/news.png)
+**Normal user dashboard showing the techhub wallet section where users can download their instant statements.**
+![Alt Text](https://davikani.s3.eu-west-3.amazonaws.com/githubProjectsImages/ELPtechhub/user.png)
 
-## Laravel Sponsors
+### Main Technologies </br>
+* *Laravel 6.0.*
+* *Vuejs 2.0.*
+* *Php 7.2*
+* *Bootstrap 4.0*
+* *Jquery 3.2*
+* *Axios 0.19.2*
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+### Prerequisites </br>
+Install node package manager.
+```bash
+npm install npm@latest -g
+```
+Run the following command to install php and all the required php modules.
+```bash
+sudo apt install php7.2-common php7.2-cli php7.2-gd php7.2-mysql php7.2-curl php7.2-intl php7.2-mbstring php7.2-bcmath php7.2-imap php7.2-xml php7.2-zip
+```
+Install composer globally, download the Composer installer with curl and move the file to the /usr/local/bin directory:
+```bash
+curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+```
+Very the installation by printing the composer version.
+```bash
+composer --version
+```
+### Installation. </br>
+1.Clone the repo and navigate to the downloaded folder.
+```bash
+git clone https://github.com/kimengu-david/Equity-leaders-program-techhub-portal
+```
+2.Install npm packages.
+```bash
+npm install
+```
+3.Install composer packages.
+```bash
+composer install
+```
+4.Configure your database credentials in database.php file of the config folder.</br>
+6.Perform database migrations by running the following command.
+```bash.
+php artisan migrate
+```
+5.You can start the development server by executing the following command:
+```bash
+php artisan serve
+```
+6.Open your browser and type http://127.0.0.1:8000 and assuming the installation is successful, You should be able to see the homepage.
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Contribution.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.</br>
+Any contributions that you make are greatly appreaciated.
+  
 
-## Security Vulnerabilities
+### Contact.
+David Mutune -davidmutune200@gmail.com
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+ 
