@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\ScholarController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,27 +9,55 @@ use App\Http\Controllers\ScholarController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-/*Adds a user to the user_meeting table*/
-Route::post('/usermeeting','DisplayController@usermeeting');
-/*Loads the landing page with the required resources*/
-Route::get('/home','DisplayController@dashboard');
-/*Loads the members page with the required resources*/
-Route::get('/members','DisplayController@members');
-/*Returns the homepage*/
-Route::get('/', function () {return view('techhub.home');});
-//Route::post('/user', 'Auth\RegisterController@');
-/*Has the routes from the Create new user and login pages*/
-Auth::routes();
-//Route::resource('/meeting','MeetingController');
-/*Hosts the CRUD operations from the Material ResourceBundle*/
-Route::resource('/material','MaterialController');
-/*Loads up the meeting resource*/
-Route::get('/meeting','MeetingController@index');
-/*Hosts admin functions middleware resources*/
-Route::group(['middleware'=>'admin'],function(){
-  Route::get('/meeting/create','MeetingController@create');
-  Route::post('/meeting','MeetingController@store');
-  Route::get('/meeting/{meeting}/edit','MeetingController@edit');
-  Route::get('/attendees/export/{meeting}', 'MeetingController@export');
+ */
+use App\Mail\NewUserWelcomeMail;
+
+//The following are the new routes in use.
+
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/dashboard', 'AuthController@dashboard');
 });
+
+//Route::get('login', 'AuthController@index');
+Route::post('post-login', 'AuthController@postLogin'); //->name('login');
+//Route::get('dashboard', 'AuthController@dashboard');
+Route::get('logout', 'AuthController@logout')->name('logout');
+//End of the new routes.
+//Auth::routes();
+//The following routes are used in registration of the user.
+
+Route::get('/register', 'AuthController@registrationForm');
+Route::post('/register', 'AuthController@registerUser');
+
+//for testing.
+
+Route::get('/email', function () {
+    return new NewUserWelcomeMail();
+
+});
+
+Route::post('/follow/{user}', 'FollowsController@store');
+Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
+Route::get('/home', 'ProfilesController@index')->name('home');
+Route::get('/', 'PostsController@index');
+//The below route is for testing The argument user was removed from profiles.index method.
+//The below route responsible for posts shown on homepage.
+Route::get('/', 'ProfilesController@index')->name('profile.show');
+//Route::post('/p/create', 'PostsController@create');
+
+Route::get('/p/{post}', 'PostsController@show');
+
+Route::post('post', 'PostsController@store');
+
+Route::get('/profile/{user}/edit', 'ProfilesController@edit')->name('profile.edit');
+
+Route::patch('/profile/{user}', 'ProfilesController@update')->name('profile.update');
+
+//The following routes are to be implemented.
+Route::post('post-login', 'AuthController@postLogin');
+Route::get('registration', 'AuthController@registration');
+Route::post('post-registration', 'AuthController@postRegistration');
+Route::post('/twallet', 'UserController@updatetwallet');
+
+Route::delete('post/{id}', 'PostsController@destroy');
+Route::get('{path}', "ProfilesController@index")->where('path', '([A-z\d\-\/_.]+)?');

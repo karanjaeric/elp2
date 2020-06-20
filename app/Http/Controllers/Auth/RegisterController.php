@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
-class   RegisterController extends Controller
+class RegisterController extends Controller
 {
     /*
     |--------------------------------------------------------------------------
@@ -19,7 +19,7 @@ class   RegisterController extends Controller
     | validation and creation. By default this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
-    */
+     */
 
     use RegistersUsers;
 
@@ -28,7 +28,7 @@ class   RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -46,20 +46,13 @@ class   RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-
-     /*Implements the constraints necessary before user data submission.*/
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'firstname' => ['required'],
-            'lastname' => ['required'],
-            'gender' => ['required'],
-            'email' => ['required'],
-            'phonenumber' => ['required'],
-            'phonenumber2' => ['required'],
-            'university' => ['required'],
-            'course' => ['required'],
-            'password' => ['required'],
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'username' => ['required', 'string', 'unique:users', 'max:255'],
         ]);
     }
 
@@ -69,20 +62,12 @@ class   RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
-
-     /*Creates a new user in the database*/
     protected function create(array $data)
     {
         return User::create([
-            'firstname' => $data['firstname'],
-            'lastname' => $data['lastname'],
-            'gender' => $data['gender'],
+            'name' => $data['name'],
             'email' => $data['email'],
-            'phonenumber' => $data['phonenumber'],
-            'phonenumber2' => $data['phonenumber2'],
-            'university' => $data['university'],
-            'course' => $data['course'],
-            'github'=>$data['github'],
+            'username' => $data['username'],
             'password' => Hash::make($data['password']),
         ]);
     }

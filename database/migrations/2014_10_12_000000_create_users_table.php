@@ -12,22 +12,15 @@ class CreateUsersTable extends Migration
      * @return void
      */
     public function up()
-    {
+    { //some of the columns have been created directly in the phpadmin
         Schema::create('users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('usertype')->default(3);
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('gender');
+            $table->string('name');
             $table->string('email')->unique();
-            $table->bigInteger('phonenumber');
-            $table->bigInteger('phonenumber2');
-            $table->string('university');
-            $table->string('course');
-            $table->string('github')->nullable();
-            $table->timestamp('approved')->nullable();
+            $table->string('username')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('type')->default('user');
             $table->rememberToken();
             $table->timestamps();
         });
